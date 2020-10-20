@@ -26,7 +26,8 @@ class User extends Authenticatable
         'coupon_code',
         'account_type',
         'unique_id',
-        'organisation_name'
+        'organisation_name',
+        'is_paid'
 
 
     ];

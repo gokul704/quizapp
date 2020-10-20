@@ -8,6 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                    <h1 style="text-align:center">GeoMap Quiz</h1>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Select School/Individual</label>
                     <select class="form-control" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">

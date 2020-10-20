@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Razorpay\Api\Api;
-// use Session;
+use Session;
 
-use Illuminate\Contracts\Session\Session;
+
+// use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Auth;
+
 class PaymentController extends Controller
 {
     //
@@ -75,9 +79,23 @@ class PaymentController extends Controller
         // $user->razorpay_id = $data['razorpay_payment_id'];
         $user->save();
         // return redirect('/success');
+        //return $user->email;
+
+        // $user_details = User::where('email', $user->email)->first();
+
+        // $user_details->is_paid = 1;
+
+        // $user_details->save();
+        if($user->payment_done == 1)
+        return redirect('/home');
+        else
+        return redirect('/');
+    }
+
+
+
 
 // return dd($request->all());
-return redirect('/home');
-    }
+//return redirect('/home');
 
 }

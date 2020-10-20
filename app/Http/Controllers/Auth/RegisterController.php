@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\PaymentController;
+use App\Models\Payment;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Stmt\Foreach_;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Session\Session as SessionSession;
 
 class RegisterController extends Controller
 {
@@ -30,8 +35,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo ='/payment';
     /**
      * Create a new controller instance.
      *
